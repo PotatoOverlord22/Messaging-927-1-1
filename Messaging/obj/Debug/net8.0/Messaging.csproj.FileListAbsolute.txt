@@ -12,3 +12,4 @@ C:\Users\rauli\source\repos\Messaging\Messaging\obj\Debug\net8.0\refint\Messagin
 C:\Users\rauli\source\repos\Messaging\Messaging\obj\Debug\net8.0\Messaging.pdb
 C:\Users\rauli\source\repos\Messaging\Messaging\obj\Debug\net8.0\Messaging.genruntimeconfig.cache
 C:\Users\rauli\source\repos\Messaging\Messaging\obj\Debug\net8.0\ref\Messaging.dll
+C:\Users\rauli\source\repos\Messaging\Messaging\obj\Debug\net8.0\Messaging.sourcelink.json
