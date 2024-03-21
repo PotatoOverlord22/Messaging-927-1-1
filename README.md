@@ -3,10 +3,10 @@
 # Meet the team
 Team Leader: Raul Tiron (PotatoOverlord22)
 <br>
-Team Co-Lead: Cosmin Timiș
+Team Co-Lead: Cosmin Timiș (cosmintimis)
 <br>
-Team Member: Denisa Toarcaș
+Team Member: Denisa Toarcaș (DenisaToarcas)
 <br>
-Team Member: Roberta Șuștrean
+Team Member: Roberta Șuștrean (betina17)
 <br>
 Team Member: Dragoș Talabă (tlbdrgs)
