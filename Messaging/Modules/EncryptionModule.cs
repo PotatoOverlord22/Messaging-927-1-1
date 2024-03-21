@@ -8,9 +8,9 @@ namespace Messaging.Modules
 {
     public class EncryptionModule
     {
-        private string plainText;
+        private string plainText { get; set; }
 
-        private string key;
+        private string key { get; set; }
 
         public EncryptionModule(string text)
         {
@@ -18,15 +18,6 @@ namespace Messaging.Modules
             plainText = text;
         }
 
-        public string getPlainText()
-        {
-            return plainText;
-        }
-
-        public void setPlainText(string text)
-        {
-            plainText = text;
-        }
 
         public string getKey()
         {
