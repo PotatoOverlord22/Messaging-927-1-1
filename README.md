@@ -9,4 +9,4 @@ Team Member: Denisa Toarcaș
 <br>
 Team Member: Roberta Șuștrean
 <br>
-Team Member: Dragoș Talabă (craawl)
+Team Member: Dragoș Talabă (tlbdrgs)
