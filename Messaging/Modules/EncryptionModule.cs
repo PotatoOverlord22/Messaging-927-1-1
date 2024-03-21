@@ -17,18 +17,6 @@ namespace Messaging.Modules
             GenerateKey();
             plainText = text;
         }
-
-
-        public string getKey()
-        {
-            return key;
-        }
-
-        public void setKey(string newKey)
-        {
-            this.key = newKey;
-        }
-
         private void GenerateKey()
         {
 
