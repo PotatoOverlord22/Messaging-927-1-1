@@ -17,12 +17,12 @@ namespace Messaging.Modules
         // We need a data type with O(1) beggining and end operations, wanted to use a Dequeue (there isn't one in c#), so a DLL would suffice.
         // The list is used to decide which item needs to be kicked out of the cache (least recently used rule)
         // choosing to use (TKey, TValue) to uniquely identify each value
-        private LinkedList<(TKey, TValue)> _cacheQueue;
+        private LinkedList<TKey> _cacheQueue;
 
         // The above shoudl be read only, that's why I'm making only getters
         public int Capacity { get { return _capacity; } }
         public Dictionary<TKey, TValue> CacheMap { get { return _cacheMap; } }
-        public LinkedList<(TKey, TValue)> CacheQueue { get { return _cacheQueue; } }
+        public LinkedList<TKey> CacheQueue { get { return _cacheQueue; } }
 
 
         public LRUCache(int capacity)
@@ -31,7 +31,7 @@ namespace Messaging.Modules
                 throw new ArgumentOutOfRangeException("Cache capacity should be bigger than 0, provided capacity: " + capacity);
             this._capacity = capacity;
             _cacheMap = new Dictionary<TKey, TValue>();
-            _cacheQueue = new LinkedList<(TKey, TValue)>();
+            _cacheQueue = new LinkedList<TKey>();
         }
 
         public bool IsKeyInCache(TKey key)
@@ -55,8 +55,8 @@ namespace Messaging.Modules
             // This means we have the value with the given key in our cache
             value = _cacheMap[key];
             // Put the value in front of the queue
-            _cacheQueue.Remove((key, value));
-            _cacheQueue.AddFirst((key, value));
+            _cacheQueue.Remove(key);
+            _cacheQueue.AddFirst(key);
             return true;
         }
 
@@ -67,8 +67,8 @@ namespace Messaging.Modules
             {
                 // Just update it as recently used if it is in the map (aka add it in front of the queue)
                 _cacheMap[key] = value;
-                _cacheQueue.Remove((key, value));
-                _cacheQueue.AddFirst((key, value));
+                _cacheQueue.Remove(key);
+                _cacheQueue.AddFirst(key);
                 return;
             }
             // Since we didn't find it in the cache we have to actually add it
@@ -78,12 +78,12 @@ namespace Messaging.Modules
                 // Kick the last item both from the queue and from the map
                 var lastItem = _cacheQueue.Last();
                 _cacheQueue.RemoveLast();
-                _cacheMap.Remove(lastItem.Item1);
+                _cacheMap.Remove(lastItem);
             }
 
             // Add them to the map and to the queue
             _cacheMap[key] = value;
-            _cacheQueue.AddFirst((key, value));
+            _cacheQueue.AddFirst(key);
         }
 
         public void Clear()
