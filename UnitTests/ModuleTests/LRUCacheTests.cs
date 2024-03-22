@@ -60,7 +60,7 @@ namespace UnitTests.ModuleTests
             Assert.IsFalse(cache.IsKeyInCache(1));
 
             // try bigger numbers
-            int size = 100;
+            int size = 9000;
             var bigCache = new LRUCache<int, int>(size);
             for (i = 1; i <= size; ++i)
             {
@@ -106,7 +106,7 @@ namespace UnitTests.ModuleTests
 
             // try bigger numbers
             int i;
-            int size = 100;
+            int size = 1000;
             int intValue;
             var bigCache = new LRUCache<int, int>(size);
             for (i = 1; i <= size; ++i)
